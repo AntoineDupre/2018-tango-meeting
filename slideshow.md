@@ -12,10 +12,39 @@ Author
 
 Date
 
+---
+name: Background
+layout: true
+
+The playing field
+=========
 
 ---
+Several controlsystems (Tango databases)
+* Accelerator and storage rings ~ 10000 devices
+* One per beamline ~ 700 devices x 15
+* Other systems such as testlabs ~ 500 devices each
+
+Total number of Tango devices at MAX IV > 20000
+
 ---
 
+name: Problem
+layout: true
+
+Necessity is the mother of invention
+=========
+
+---
+Multiple sources of information from the different subsystems that make up a synchrotron:
+* Magnets
+* Vacuum
+* Diagnostics
+* RF
+etc
+
+
+---
 name: Dsconfig 
 layout: true
 
@@ -91,11 +120,9 @@ name: Dsconfig
 layout: true
 
 Renaming
-=========
+=======
 
 ---
-
-
 
 ```bash
 - Device: some/device/1
@@ -153,4 +180,15 @@ Add/change 2 device properties in 1 devices.
 ```
 
 ---
+name: Magnet configuration
+layout: true
+
+Magnet Configuration
+=========
+
+---
+(stolen from wiki, tb modified)
+The magnet properties have been converted to json file by a script that takes a total of four input sources: 1. the lattice file that contains all the magnets in the Linac, their type and length 2. a magnet to power supply mapping file 3. the xls sheet of calibration data above 4. a sheet of alarm interlock tags (see below) 
+---
+
 
