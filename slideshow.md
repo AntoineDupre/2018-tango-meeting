@@ -16,7 +16,7 @@ Date
 name: Background
 layout: true
 
-The Problem at Hand
+The problem at hand
 =========
 
 ---
@@ -46,12 +46,12 @@ Necessity is the mother of invention
 =========
 
 ---
-We need to:
+###We need to:
 * Keep our configuration consistent and correct
 * Keep up with demands for updates and changes
 * Keep track of changes
 
-How do we do it?
+###How do we do it?
 * Ensure consistency of source files
  * MAXIV naming convention is common ground
  * Track versions
@@ -218,15 +218,23 @@ Add/change 2 device properties in 1 devices.
 ```
 
 ---
-name: Magnet configuration
+name: Getting to the Json
 layout: true
 
-Magnet Configuration
+Getting to the Json - worst and best case
 =========
 
 ---
-(stolen from wiki, tb modified)
-The magnet properties have been converted to json file by a script that takes a total of four input sources: 1. the lattice file that contains all the magnets in the Linac, their type and length 2. a magnet to power supply mapping file 3. the xls sheet of calibration data above 4. a sheet of alarm interlock tags (see below) 
----
+
+Magnet Configuration
+-----
+The magnet properties are converted to the json file format by a script that takes a total of four input sources: 
+1. A lattice file that contains all the magnets in the Linac, their type and length 
+2. A magnet to power supply mapping file (xls)
+3. The xls sheet of calibration data  
+4. A sheet of alarm interlock tags from the PLC 
 
 
+PLC-controlled Devices
+-----
+Facade-devices based on groups of PLC-tags are generated from jinja-templates with a script that takes a CSV-file dumped directly from the PLC program as input. All tag names follow the MAXIV naming convention.
