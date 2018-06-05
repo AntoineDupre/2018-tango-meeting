@@ -226,6 +226,12 @@ Getting to the Json - worst and best case
 
 ---
 
+
+.center[![dsconfig](images/dsconfig.svg)]
+
+
+---
+
 Magnet Configuration
 -----
 The magnet properties are converted to the json file format by a script that takes a total of four input sources: 
@@ -341,7 +347,7 @@ R3-A111611-CAB02-VAC-IPCUA-01  |   R3-316L-VAC-IPFC-01
 
 
 
-.center[![Jupyter](images/ionpump.svg)]
+.center[![ionpump](images/ionpump.svg)]
 
 
 
@@ -436,3 +442,8 @@ Display a diff before execution
 Can configure polling and events (throught the hdbpp_event_manager)
 
 
+
+---
+
+
+add something about configuration at MaxIV (ansible, rpm ... ) to explain the tool philosophy 
