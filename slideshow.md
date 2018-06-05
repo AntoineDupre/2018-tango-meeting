@@ -16,6 +16,30 @@ Date
 name: Background
 layout: true
 
+This presentation is not about Ansible
+=========
+
+---
+At MAX IV we use Ansible to configure all control system servers and client computers.
+
+
+* Our configurations are standardized 
+* Deployment can be automated
+* Configuration is maintained under version control
+* Idempotency
+
+
+_adjective: idempotent_
+```
+    denoting an element of a set which is unchanged in value 
+    when multiplied or otherwise operated on by itself
+```
+When you reapply a configuration on an already configured system NOTHING IS CHANGED
+
+---
+name: Background
+layout: true
+
 The problem at hand
 =========
 
@@ -52,10 +76,10 @@ Necessity is the mother of invention
 * Keep track of changes
 
 ###How do we do it?
-* Ensure consistency of source files
+* Ensure consistency of source files (the format is up to the subsystem)
  * MAXIV naming convention is common ground
  * Track versions
-* Conversion tools for each type of source file
+* Parsing tools for each type of source file
 * Intermediate format that can be used by a
 * Simple deployment tool that also allows us to
 * Track our configuration
@@ -79,7 +103,7 @@ The current state
 Plans
 ----
 * Web interface to allow subsystem owners to check their source files
-* Add conversion tools for even more subsystems
+* Add parsing tools for even more subsystems
 * Allow some subsystems owners to apply their own updates 
  
 ---
