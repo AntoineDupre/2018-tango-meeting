@@ -494,6 +494,7 @@ Sardana Devices
   - Sardana Pool 
   - Element ID
   - Controller ID
+  - Alias 
   - ...
 
 - Easy diff between production and stored configuration.
