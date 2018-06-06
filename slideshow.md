@@ -10,7 +10,7 @@ Tango configuration tool
 
 M. Lindberg, A. Dupre
 
-07 june 2018
+07 June 2018
 
 ---
 name: Background
@@ -268,12 +268,13 @@ Getting to the Json - worst and best case
 
 Magnet Configuration
 -----
-The magnet properties are converted to the json file format by a script that takes a total of four input sources: 
+The magnet properties are converted to the json file format by a script that needs a total of four input sources: 
 1. A lattice file that contains all the magnets in the Linac, their type and length 
 2. A magnet to power supply mapping file (xls)
 3. The xls sheet of calibration data  
 4. A sheet of alarm interlock tags from the PLC 
 
+The result is Json configuration files for all the powersupply, magnet and circuit devices in the accelerator, as well as PyAlarm devices.
 
 ---
 name: Getting to the Json
@@ -284,10 +285,13 @@ PLC-controlled Devices
 =====
 
 ---
-- PLC raw dump imput.
-- Facade-devices based on PLC-tags.
-- TangoDevices configuration generated from jinja-templates
-- Tag names follow the MAXIV naming convention.
+For the devices that are controlled via PLC the situation is much simpler.
+
+
+1. The input source is a raw dump from the PLC program.
+ - Tag names follow the MAXIV naming convention 
+ - The Json configuration is generated from jinja-templates
+ - High Level Facade-devices based on PLC-tags
 
 
 ---
@@ -459,7 +463,7 @@ HDB++ configuration
   - event filtering 
   - event from the code 
 
-- Easly display miss configuration or missing attributes.
+- Easily display misconfiguration or missing attributes.
 
 ```
 {
@@ -484,13 +488,13 @@ layout: true
 Sardana Devices
 =====
 
-- File from the Hardware group
+- Custom xls file from the Hardware group
   - Motor name
   - Motor type
-  - Properties (motor step, encoder range ... ) 
+  - Properties (motor step, encoder range, offset ... ) 
 
 
-- Generate the sardana environement 
+- Generate the sardana environment 
   - Sardana Pool 
   - Element ID
   - Controller ID
