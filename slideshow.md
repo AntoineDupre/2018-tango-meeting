@@ -66,7 +66,7 @@ Multiple sources of information from the different subsystems that make up a syn
 name: Problem
 layout: true
 
-Necessity is the mother of invention
+Creating order 
 =========
 
 ---
@@ -80,8 +80,8 @@ Necessity is the mother of invention
  * MAXIV naming convention is common ground
  * Track versions
 * Parsing tools for each type of source file
-* Intermediate format that can be used by a
-* Simple deployment tool that also allows us to
+* Intermediate Json format that can be used by a
+* Simple deployment tool (DsConfig!) that also allows us to
 * Track our configuration
 
 ---
@@ -377,10 +377,10 @@ R3-A111611-CAB02-VAC-IPCUA-01  |   R3-316L-VAC-IPFC-01
 
 ---
 
-User autonomie 
+User autonomy 
 ------------
 
-- Json file can be generated automaticaly from gitlab runner.
+- Json file can be generated automatically from gitlab runner.
 - Source files are downloaded from Alfresco.
 - One config file is generated per tango devices.
 - Static error checking.
