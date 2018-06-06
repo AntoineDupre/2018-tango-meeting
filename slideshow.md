@@ -5,12 +5,12 @@ layout: true
 name: title
 class: center, middle
 
-Title
+Tango configuration tool
 ========================
 
-Author
+M. Lindberg, A. Dupre
 
-Date
+07 june 2018
 
 ---
 name: Background
@@ -34,7 +34,6 @@ _adjective: idempotent_
     denoting an element of a set which is unchanged in value 
     when multiplied or otherwise operated on by itself
 ```
-When you reapply a configuration on an already configured system NOTHING IS CHANGED
 
 ---
 name: Background
@@ -105,6 +104,15 @@ Plans
 * Web interface to allow subsystem owners to check their source files
 * Add parsing tools for even more subsystems
 * Allow some subsystems owners to apply their own updates 
+
+
+---
+
+
+.center[![dsconfig](images/dsconfig.svg)]
+
+
+
  
 ---
 name: Dsconfig 
@@ -250,12 +258,6 @@ Getting to the Json - worst and best case
 
 ---
 
-
-.center[![dsconfig](images/dsconfig.svg)]
-
-
----
-
 Magnet Configuration
 -----
 The magnet properties are converted to the json file format by a script that takes a total of four input sources: 
@@ -274,8 +276,10 @@ PLC-controlled Devices
 =====
 
 ---
-
-Facade-devices based on groups of PLC-tags are generated from jinja-templates with a script that takes a CSV-file dumped directly from the PLC program as input. All tag names follow the MAXIV naming convention.
+- PLC raw dump imput.
+- Facade-devices based on PLC-tags.
+- TangoDevices configuration generated from jinja-templates
+- Tag names follow the MAXIV naming convention.
 
 
 ---
@@ -360,7 +364,8 @@ PyAlarm/R3-301-VAC": {
 ```
 ---
 
-cable db
+Cable DB
+--------
 
 ```
 Equip. A                       |   Equip. B
@@ -408,6 +413,8 @@ User autonomy
 
 ---
 Error handling 
+---------
+
 ```
 Process config-fsw.json : 
  No missing tag 
@@ -429,6 +436,37 @@ Process config-ha.json :
 
 
 
+---
+name: HDB++ configuration
+layout: true
+
+
+HDB++ configuration
+=====
+
+
+- Keep configuration on git repository.
+- Configuration per Tango class
+  - polling configuration 
+  - event filtering 
+  - event from the code 
+
+- Easly display miss configuration or missing attributes.
+
+```
+{
+    "classes": {
+        "DanfysikSysController": {
+            "Current": 140,
+            "Interlocked": 1000,
+            "Resistance": 1000,
+            "State": 140,
+            "Voltage": 1000
+        },
+
+```
+
+---
 
 ---
 name: Sardana devices
@@ -438,35 +476,17 @@ layout: true
 Sardana Devices
 =====
 
-Hardware group maintain an xls file with all motors and configuration (names, type, step per units, ... ) 
+- File from the Hardware group
+  - Motor name
+  - Motor type
+  - Properties (motor step, encoder range ... ) 
 
-Json2tango has been adapted to Sardana (generate ids, ctrl_ids and sardana specific properties))
 
-Can display a diff between the configuration file and the actual configuration
+- Generate the sardana environement 
+  - Sardana Pool 
+  - Element ID
+  - Controller ID
+  - ...
 
-Compatible with existing file (use dump)
-
+- Easy diff between production and stored configuration.
 ---
-name: HDB++ configuration
-layout: true
-
-
-HDB++ configuration
-=====
-
-- Configuration per Tango class
-  - polling configuration 
-  - event filtering 
-  - event from the code 
-
-
-- Keep configuration on git repository.
-- Easly display miss configuration or missing attributes.
-
-```
-
-
----
-
-
-add something about configuration at MaxIV (ansible, rpm ... ) to explain the tool philosophy 
