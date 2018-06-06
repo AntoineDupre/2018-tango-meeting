@@ -430,17 +430,16 @@ layout: true
 HDB++ configuration
 =====
 
+- Configuration per Tango class
+  - polling configuration 
+  - event filtering 
+  - event from the code 
 
-List of the expected configuration based on device class
 
-Knows which device are pushing archive events
+- Keep configuration on git repository.
+- Easly display miss configuration or missing attributes.
 
-Can easly display missing attribute in the archiving system or miss configuration
-
-Display a diff before execution
-
-Can configure polling and events (throught the hdbpp_event_manager)
-
+```
 
 
 ---
