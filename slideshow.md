@@ -264,13 +264,12 @@ Add/change 2 device properties in 1 devices.
 name: Getting to the Json
 layout: true
 
-Getting to the Json - worst and best case
+Magnet Configuration
 =========
 
 ---
 
-Magnet Configuration
------
+
 The magnet properties are converted to the json file format by a script that needs a total of four input sources: 
 1. A lattice file that contains all the magnets in the Linac, their type and length 
 2. A magnet to power supply mapping file (xls)
